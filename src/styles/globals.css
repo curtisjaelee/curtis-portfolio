@@ -10,6 +10,11 @@
   --accent: #378add;
   --accent-light: #e6f1fb;
 }
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
 
 * {
   margin: 0;
@@ -259,4 +264,28 @@ blockquote {
 
 .custom-cursor.is-active {
   transform: translate(0, 0) scale(1.6);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+    padding: 24px;
+    justify-content: flex-start;
+    padding-top: 60px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-links {
+    justify-content: center;
+  }
+
+  .project-list {
+    width: 100%;
+    max-width: 320px;
+  }
 }

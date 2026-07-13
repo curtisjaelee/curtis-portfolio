@@ -6,8 +6,15 @@ export function CustomCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 })
   const [active, setActive] = useState(false)
   const [visible, setVisible] = useState(false)
+  const [isTouchDevice, setIsTouchDevice] = useState(false)
 
   useEffect(() => {
+    setIsTouchDevice(window.matchMedia('(hover: none) and (pointer: coarse)').matches)
+  }, [])
+
+  useEffect(() => {
+    if (isTouchDevice) return
+
     function handleMove(e: MouseEvent) {
       setPos({ x: e.clientX, y: e.clientY })
       setVisible(true)
@@ -26,7 +33,9 @@ export function CustomCursor() {
       window.removeEventListener('mousemove', handleMove)
       document.documentElement.removeEventListener('mouseleave', handleLeave)
     }
-  }, [])
+  }, [isTouchDevice])
+
+  if (isTouchDevice) return null
 
   return (
     <svg
