@@ -11,7 +11,7 @@ export default function Home() {
       <div className="hero-content">
         <h1>
           Curtis Lee,<br />
-          I build cloud systems people can <span className="accent">actually rely on</span> 
+          Reliability and security, <span className="accent">by design</span> 
         </h1>
         <div className="hero-links">
             <a href="/curtis-lee-resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
